@@ -8,8 +8,7 @@ feature 'swith_turn' do
 
   scenario 'players want to switch turns' do
     sign_in_and_play
-    click_button 'Attack'
-    click_button('Continue')
+    attack
     expect(page).to have_content('Emma is playing')
     expect(page).not_to have_content('Eirik is playing')
   end
