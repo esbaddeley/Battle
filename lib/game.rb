@@ -13,6 +13,10 @@ class Game
     switch_turn
   end
 
+  def game_over?
+    loosing_player
+  end
+
   private
 
   def switch_turn
@@ -21,6 +25,10 @@ class Game
     else
       @player_in_control, @player_waiting = player_1, player_2
     end
+  end
+
+  def loosing_player
+    player_1.hp == 0 || player_2.hp == 0
   end
 
 

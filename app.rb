@@ -22,11 +22,26 @@ class Battle < Sinatra::Base
     erb :play
   end
 
+  post '/attack' do
+    @game = $game
+    @game.attack
+    if @game.game_over?
+      redirect '/game_over'
+    else
+      redirect '/attack'
+    end
+  end
+
   get '/attack' do
     @game = $game
-    @player_waiting = @game.player_waiting
-    @game.attack
+    @player_waiting = @game.player_in_control
     erb :attack
+  end
+
+  get '/game_over' do
+    @game = $game
+    @player_won = @game.player_waiting
+    erb :game_over
   end
 
 

@@ -32,6 +32,14 @@ describe Game do
 
   end
 
+  describe '#game_over?' do
+    it 'happens when one of the players reach 0HP' do
+      allow(player_2).to receive(:hp){0}
+      allow(player_1).to receive(:hp){10}
+      expect(game).to be_game_over
+    end
+  end
+
 
 
 end
