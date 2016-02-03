@@ -4,8 +4,12 @@
 </div>
 
 <div>
-  <h2> <%= @game.player_1.name %>: 60/60 HP</h2>
+  <h2> <%= @game.player_1.name %>: <%=@game.player_1.hp%>/60 HP</h2>
   <h2> <%= @game.player_2.name %>: <%=@game.player_2.hp%>/60 HP</h2>
+</div>
+
+<div>
+  <h3> <%= @game.player_in_control.name %> is playing </h3>
 </div>
 
 <div>
