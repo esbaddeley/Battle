@@ -11,4 +11,24 @@ describe Player do
 
   end
 
+  describe 'Hit-points' do
+
+    it 'a new player has 60 in HP' do
+      expect(player.hp).to eq(60)
+    end
+
+    it 'a players HP can be reduced' do
+      player.reduce_hp
+      expect(player.hp).to eq(50)
+    end
+
+  end
+
+  describe '#attack' do
+    it 'should reduce the HP value of another player' do
+      player2 = Player.new('Eirik')
+      expect{ player.attack(player2) }.to change {player2.hp}.by(-Player::HP_REDUCUTION)
+    end
+  end
+
 end

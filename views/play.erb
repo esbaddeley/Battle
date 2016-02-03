@@ -1,11 +1,11 @@
 <div>
-  <h1> Player 1 is <%= @player_1 %> </h1>
-  <h1> Player 2 is <%= @player_2 %> </h1>
+  <h1> Player 1 is <%= @player_1.name %> </h1>
+  <h1> Player 2 is <%= @player_2.name %> </h1>
 </div>
 
 <div>
-  <h2> <%= @player_1 %>: 60/60 HP</h2>
-  <h2> <%= @player_2 %>: 60/60 HP</h2>
+  <h2> <%= @player_1.name %>: 60/60 HP</h2>
+  <h2> <%= @player_2.name %>: <%=@player_2.hp%>/60 HP</h2>
 </div>
 
 <div>
