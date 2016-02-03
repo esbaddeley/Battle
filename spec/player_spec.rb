@@ -24,11 +24,5 @@ describe Player do
 
   end
 
-  describe '#attack' do
-    it 'should reduce the HP value of another player' do
-      player2 = Player.new('Eirik')
-      expect{ player.attack(player2) }.to change {player2.hp}.by(-Player::HP_REDUCUTION)
-    end
-  end
 
 end
