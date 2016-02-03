@@ -5,7 +5,8 @@ feature 'submitname' do
     fill_in('Player 1', with: 'Eirik')
     fill_in('Player 2', with: 'Emma')
     click_button('Submit')
-    expect(page).to have_content('Eirik', 'Emma')
+    expect(page).to have_content('Eirik')
+    expect(page).to have_content('Emma')
   end
 
 end
