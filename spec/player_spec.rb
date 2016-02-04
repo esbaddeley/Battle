@@ -20,14 +20,4 @@ describe Player do
       end
     end
   end
-  context 'When the player is attacked' do
-    describe '#attack' do
-
-      it 'deducts hp points from player' do
-        allow(player2).to receive(:attacked_hp).and_return(90)
-        allow(player2).to receive(:hp).and_return(90)
-        expect(player1.attack(player2)).to eq player2.hp
-      end
-    end
-  end
 end

@@ -9,12 +9,6 @@ class Player
   end
 
   def attacked_hp
-    @hp = (STARTING_HP - 10)
+    @hp -= 10
   end
-
-  def attack(player)
-    player.attacked_hp
-  end
-
-
 end
