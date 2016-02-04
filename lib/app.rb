@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'rack'
 require_relative 'player.rb'
+require_relative 'game.rb'
 # enable :sessions
 
 class Battle < Sinatra::Base
@@ -27,16 +28,23 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do
+    $game = Game.new
     @player_one = session[:player_one_name]
     @player_two = session[:player_two_name]
     erb :play
   end
 
+  post '/attack' do
+    @player_one = session[:player_one_name]
+    @player_two = session[:player_two_name]
+    $game.attack(@player_two)
+    erb :attack
+  end
 
   get '/attack' do
-  @player_one = session[:player_one_name]
-  @player_two = session[:player_two_name]
-  erb :attack
+    @player_one = session[:player_one_name]
+    @player_two = session[:player_two_name]
+    erb :attack
   end
 
 
