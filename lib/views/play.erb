@@ -1,12 +1,12 @@
 
 <h1 style="color:#004d00;size:6;text-align:center;">
-  <%= @player_one.name %> vs. <%=  @player_two.name %>
+  <%= $game.player_1_name %> vs. <%=  $game.player_2_name %>
 </h1>
 <h2 style="color:#e64d00;size:5;text-align:left;">
-  HP: <%= @player_one.hp %>
+  HP: <%= $game.player_1_hp %>
 </h2>
 <h2 style="color:#ffcc99;size:5;text-align:right;">
-  HP: <%= @player_two.hp %>
+  HP: <%= $game.player_2_hp %>
 </h2>
 <form action= "/attack" method="post">
 <input type="submit" value="Attack@!£!$!%">
