@@ -25,10 +25,18 @@ describe Game do
       game.attack
     end
 
+    it 'should reduce HP by a random amount ' do
+      allow(game).to receive(:random_number).and_return(5)
+      expect(player_2).to receive(:reduce_hp).with(5)
+      game.attack
+    end
+
     it 'switches the player in control' do
       game.attack
       expect(game.player_in_control).to eq(player_2)
     end
+
+
 
   end
 

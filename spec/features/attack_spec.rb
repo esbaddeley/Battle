@@ -6,12 +6,14 @@ feature 'Attack' do
   end
 
   scenario 'Attack on player 2 reduces HP with 10' do
+    allow(Kernel).to receive(:rand).and_return(10)
     sign_in_and_play
     attack
     expect(page).to have_content('Emma: 50/60 HP')
   end
 
-  scenario 'Attack on player 1 reduces HP with 10' do
+  scenario 'Attack on player 1 reduces HP by an amount' do
+    allow(Kernel).to receive(:rand).and_return(10)
     sign_in_and_play
     attack
     attack

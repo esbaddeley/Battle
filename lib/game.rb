@@ -9,12 +9,16 @@ class Game
   end
 
   def attack
-    @player_waiting.reduce_hp
+    @player_waiting.reduce_hp(random_number)
     switch_turn
   end
 
   def game_over?
     loosing_player
+  end
+
+  def random_number
+    Kernel.rand(0..10)
   end
 
   private

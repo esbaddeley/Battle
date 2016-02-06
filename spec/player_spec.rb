@@ -18,7 +18,7 @@ describe Player do
     end
 
     it 'a players HP can be reduced' do
-      player.reduce_hp
+      player.reduce_hp(10)
       expect(player.hp).to eq(50)
     end
 
